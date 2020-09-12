@@ -6,38 +6,38 @@
 | password | string | null: false |
 | name-zen | string | null: false |
 | name-kana| string | null: false |
-| days     | string | null: false |
-- has_many :item
-- has_many :order
+| days     | date   | null: false |
+- has_many :items
+- has_many :orders
 
 ## items
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| category | string | null: false |
-| status   | string | null: false |
-| charge   | integer| null: false |
-| source   | string | null: false |
-| price    | integer| null: false |
-| users-id | string | null: false |
-- berongs_to :user
+| Column   | Type       | Options     |
+| -------- | ---------- | ----------- |
+| name     | string     | null: false |
+| category | integer    | null: false |
+| status   | integer    | null: false |
+| charge   | integer    | null: false |
+| source   | integer    | null: false |
+| price    | integer    | null: false |
+| users-id | references | null: false, foreign_key: true |
+- belongs_to :user
 - has_one :done
 
 ## done
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| items-id | string | null: false |
-| buyer    | string | null: fakse |
-| to-adress| string | null: false |
+| Column   | Type       | Options     |
+| -------- | ---------- | ----------- |
+| items-id | references | null: false, foreign_key: true|
+| buyer    | string     | null: fakse |
+| to-adress| string     | null: false |
 - berongs_to :item
 - has_one :order
 
 ## order
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| item-id  | string | null: false |
-| users-id | string | null: false |
-| orice    | integer| null: false |
+| Column   | Type       | Options     |
+| -------- | ---------- | ----------- |
+| item-id  | references | null: false, foreign_key: true|
+| users-id | references | null: false, foreign_key: true|
+| orice    | integer    | null: false |
 - berongs_to :done
 - berongs_to :user
 
