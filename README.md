@@ -7,8 +7,8 @@
 | name-zen | string | null: false |
 | name-kana| string | null: false |
 | days     | string | null: false |
-- has_many :items
-- has_many :oder
+- has_many :item
+- has_many :order
 
 ## items
 | Column   | Type   | Options     |
@@ -20,7 +20,7 @@
 | source   | string | null: false |
 | price    | integer| null: false |
 | users-id | string | null: false |
-- berongs_to :users
+- berongs_to :user
 - has_one :done
 
 ## done
@@ -29,15 +29,15 @@
 | items-id | string | null: false |
 | buyer    | string | null: fakse |
 | to-adress| string | null: false |
-- berongs_to :items
-- has_one :oder
+- berongs_to :item
+- has_one :order
 
-## oder
+## order
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | item-id  | string | null: false |
 | users-id | string | null: false |
 | orice    | integer| null: false |
 - berongs_to :done
-- berongs_to :users
+- berongs_to :user
 
