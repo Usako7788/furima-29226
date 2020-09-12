@@ -13,31 +13,30 @@
 ## items
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
+| image    | string     | null: false |
 | name     | string     | null: false |
+| info     | text       | null: false |
 | category | integer    | null: false |
 | status   | integer    | null: false |
 | charge   | integer    | null: false |
 | source   | integer    | null: false |
 | price    | integer    | null: false |
-| users-id | references | null: false, foreign_key: true |
+| user     | references | null: false, foreign_key: true |
 - belongs_to :user
 - has_one :done
 
 ## done
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
-| items-id | references | null: false, foreign_key: true|
+| item     | references | null: false, foreign_key: true|
 | buyer    | string     | null: fakse |
-| to-adress| string     | null: false |
-- berongs_to :item
+- belongs_to :item
 - has_one :order
 
-## order
+## payment
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
-| item-id  | references | null: false, foreign_key: true|
-| users-id | references | null: false, foreign_key: true|
-| orice    | integer    | null: false |
-- berongs_to :done
-- berongs_to :user
+| done     | reference  |null: false, foreign_key: true|
+| price    | integer    | null: false |
+- belongs_to :done
 
