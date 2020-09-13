@@ -39,11 +39,11 @@
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
 | done     | reference  |null: false, foreign_key: true|
-| prefectures | string | null: false |
+| prefectures | integer | null: false |
 | cities  | string   | null: false |
 | address  | string | null: false |
-| building-number | integer | null: false |
-| postal-code | integer    | null: false |
-| phone-number| integer    | null: false |
+| building-number | string |      |
+| postal-code | string  | null: false |
+| phone-number| string  | null: false |
 - belongs_to :done
 
