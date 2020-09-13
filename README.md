@@ -8,15 +8,13 @@
 | name-last | string | null: false |
 | name-first-kana | string | null: false |
 | name-last-kana | string | null: false |
-
-| days     | date   | null: false |
+| birthday | date   | null: false |
 - has_many :items
 - has_many :orders
 
 ## items
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
-| image    | string     | null: false |
 | name     | string     | null: false |
 | info     | text       | null: false |
 | category | integer    | null: false |
@@ -41,11 +39,11 @@
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
 | done     | reference  |null: false, foreign_key: true|
-| Prefectures | integer    | null: false |
-| cities　| integer    | null: false |
-| address　| integer    | null: false |
-| Building-number | integer | null: false |
-| postal-code　| integer    | null: false |
+| prefectures | string | null: false |
+| cities  | string   | null: false |
+| address  | string | null: false |
+| building-number | integer | null: false |
+| postal-code | integer    | null: false |
 | phone-number| integer    | null: false |
 - belongs_to :done
 
