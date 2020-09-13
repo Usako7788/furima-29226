@@ -4,8 +4,11 @@
 | name     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
-| name-zen | string | null: false |
-| name-kana| string | null: false |
+| name-first | string | null: false |
+| name-last | string | null: false |
+| name-first-kana | string | null: false |
+| name-last-kana | string | null: false |
+
 | days     | date   | null: false |
 - has_many :items
 - has_many :orders
@@ -29,14 +32,20 @@
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
 | item     | references | null: false, foreign_key: true|
-| buyer    | string     | null: fakse |
+| user     | references | null: false, foreign_key: true |
 - belongs_to :item
+- belongs_to :user
 - has_one :order
 
 ## payment
 | Column   | Type       | Options     |
 | -------- | ---------- | ----------- |
 | done     | reference  |null: false, foreign_key: true|
-| price    | integer    | null: false |
+| Prefectures | integer    | null: false |
+| cities　| integer    | null: false |
+| address　| integer    | null: false |
+| Building-number | integer | null: false |
+| postal-code　| integer    | null: false |
+| phone-number| integer    | null: false |
 - belongs_to :done
 
